@@ -1,0 +1,36 @@
+{
+    "solution": {
+        "teamsAppTenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "subscriptionId": "54bc076b-0767-4fa6-8a59-cb257d9edc3e",
+        "subscriptionName": "Visual Studio Enterprise Subscription",
+        "tenantId": "313ef12c-d7cb-4f01-af90-1b113db5aa9a",
+        "needCreateResourceGroup": true,
+        "resourceGroupName": "diversityand_inclusive-dev-rg",
+        "location": "East US",
+        "resourceNameSuffix": "d9de5a",
+        "provisionSucceeded": true
+    },
+    "fx-resource-appstudio": {
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "teamsAppId": "b8bca080-d0f6-4f43-af9d-2e2ddf297044",
+        "teamsAppUpdatedAt": 1663222679034
+    },
+    "fx-resource-identity": {
+        "identityName": "diversityadeva253cc",
+        "identityResourceId": "/subscriptions/54bc076b-0767-4fa6-8a59-cb257d9edc3e/resourceGroups/diversityand_inclusive-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/diversityadeva253cc",
+        "identityClientId": "d7139a8c-d2b5-44a8-9cf4-5428801b759a"
+    },
+    "fx-resource-bot": {
+        "botId": "cd608d8c-ad92-4504-b3ab-aa4bf091a2e6",
+        "botPassword": "{{fx-resource-bot.botPassword}}",
+        "objectId": "0bd0ad8e-4e42-467e-885b-0b814532f12c",
+        "skuName": "B1",
+        "siteName": "diversityadeva253ccbot",
+        "validDomain": "diversityadeva253ccbot.azurewebsites.net",
+        "appServicePlanName": "diversityadeva253ccbot",
+        "resourceId": "/subscriptions/54bc076b-0767-4fa6-8a59-cb257d9edc3e/resourceGroups/diversityand_inclusive-dev-rg/providers/Microsoft.Web/sites/diversityadeva253ccbot",
+        "siteEndpoint": "https://diversityadeva253ccbot.azurewebsites.net"
+    },
+    "fx-resource-cicd": {},
+    "fx-resource-api-connector": {}
+}

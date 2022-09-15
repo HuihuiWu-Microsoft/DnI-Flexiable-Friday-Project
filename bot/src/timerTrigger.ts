@@ -1,8 +1,10 @@
 import { AzureFunction, Context } from "@azure/functions";
 import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
+import { NotificationTargetType} from "@microsoft/teamsfx";
 import notificationTemplate from "./adaptiveCards/notification-default.json";
 import { CardData } from "./cardModels";
 import { bot } from "./internal/initialize";
+import { getStoryData } from "./storyData/data";
 
 // An Azure Function timer trigger.
 //
@@ -13,19 +15,37 @@ import { bot } from "./internal/initialize";
 // send an Adaptive Card as required.
 const timerTrigger: AzureFunction = async function (context: Context, myTimer: any): Promise<void> {
   const timeStamp = new Date().toISOString();
+  const card = AdaptiveCards.declare<CardData>(notificationTemplate).render({
+    storyTitle: "Today's D&I story!",
+    storyImage: "Image placeholder for the story",
+    storyDescription: `This is a sample time-triggered notification (${timeStamp}).`,
+    storyUrl: "https://www.adaptivecards.io/",
+  });
+  //const card = getStoryData();
 
   // By default this function will iterate all the installation points and send an Adaptive Card
   // to every installation.
   for (const target of await bot.notification.installations()) {
-    await target.sendAdaptiveCard(
-      AdaptiveCards.declare<CardData>(notificationTemplate).render({
-        title: "New Event Occurred!",
-        appName: "Contoso App Notification",
-        description: `This is a sample time-triggered notification (${timeStamp}).`,
-        notificationUrl: "https://www.adaptivecards.io/",
-      })
-    );
+      // List all members in the Group Chat and send the Adaptive Card to each Team member
+    if (target.type === NotificationTargetType.Group) {
+      const members = await target.members();
+      for (const member of members) {
+        await member.sendAdaptiveCard(card);
+      }
+    }
 
+      // List all members in the Team and send the Adaptive Card to each Team member
+      if (target.type === NotificationTargetType.Channel) {
+      const members = await target.members();
+      for (const member of members) {
+        await member.sendAdaptiveCard(card);
+      }
+    }
+
+      // Directly notify the individual person
+      if (target.type === NotificationTargetType.Person) {
+      await target.sendAdaptiveCard(card);
+    }
     // Note - you can filter the installations if you don't want to send the event to every installation.
 
     /** For example, if the current target is a "Group" this means that the notification application is
