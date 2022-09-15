@@ -4,7 +4,7 @@
   "parameters": {
     "provisionParameters": {
       "value": {
-        "resourceBaseName": "diawarenesdev8c7ccd",
+        "resourceBaseName": "diversityadeva253cc",
         "botAadAppClientId": "{{state.fx-resource-bot.botId}}",
         "botAadAppClientSecret": "{{state.fx-resource-bot.botPassword}}"
       }
