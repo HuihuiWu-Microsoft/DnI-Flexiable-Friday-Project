@@ -4,7 +4,7 @@
         "subscriptionId": "54bc076b-0767-4fa6-8a59-cb257d9edc3e",
         "subscriptionName": "Visual Studio Enterprise Subscription",
         "tenantId": "313ef12c-d7cb-4f01-af90-1b113db5aa9a",
-        "needCreateResourceGroup": true,
+        "needCreateResourceGroup": false,
         "resourceGroupName": "diversityand_inclusive-dev-rg",
         "location": "East US",
         "resourceNameSuffix": "d9de5a",
@@ -13,7 +13,7 @@
     "fx-resource-appstudio": {
         "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
         "teamsAppId": "b8bca080-d0f6-4f43-af9d-2e2ddf297044",
-        "teamsAppUpdatedAt": 1663222679034
+        "teamsAppUpdatedAt": 1663318427308
     },
     "fx-resource-identity": {
         "identityName": "diversityadeva253cc",
