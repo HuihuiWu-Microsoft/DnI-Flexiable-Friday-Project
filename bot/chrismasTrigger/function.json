@@ -1,0 +1,12 @@
+{
+    "bindings": [
+      {
+        "name": "chrismasTimer1",
+        "type": "timerTrigger",
+        "direction": "in",
+        "schedule": "11 * * * * *"
+      }
+    ],
+    "scriptFile": "../dist/src/chrismasTrigger.js"
+  }
+  

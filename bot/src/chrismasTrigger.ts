@@ -1,10 +1,10 @@
 import { AzureFunction, Context } from "@azure/functions";
 import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
 import { NotificationTargetType} from "@microsoft/teamsfx";
-import notificationTemplate from "./adaptiveCards/notification-default.json";
-import { StoryData } from "./cardModels";
+import holidayTemplate from "./adaptiveCards/notification-holiday.json";
+import { HolidayCardData } from "./cardModels";
 import { bot } from "./internal/initialize";
-import { getStoryData } from "./cardData/data";
+import { chrismasData } from "./cardData/holidayData";
 
 // An Azure Function timer trigger.
 //
@@ -14,14 +14,7 @@ import { getStoryData } from "./cardData/data";
 // to suit your needs. You can poll an API or retrieve data from a database, and based on the data, you can
 // send an Adaptive Card as required.
 const timerTrigger: AzureFunction = async function (context: Context, myTimer: any): Promise<void> {
-  const timeStamp = new Date().toISOString();
-  const card = AdaptiveCards.declare<StoryData>(notificationTemplate).render({
-    storyTitle: "Today's D&I story!",
-    storyImage: "Image placeholder for the story",
-    storyDescription: `This is a sample time-triggered notification (${timeStamp}).`,
-    storyUrl: "https://www.adaptivecards.io/",
-  });
-  //const card = getStoryData();
+  const card = AdaptiveCards.declare<HolidayCardData>(holidayTemplate).render(chrismasData);
 
   // By default this function will iterate all the installation points and send an Adaptive Card
   // to every installation.
