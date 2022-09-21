@@ -1,0 +1,12 @@
+{
+    "bindings": [
+      {
+        "name": "thanksGivingTimer1",
+        "type": "timerTrigger",
+        "direction": "in",
+        "schedule": "0 0 10 24 11 *"
+      }
+    ],
+    "scriptFile": "../dist/src/thanksGivingTrigger.js"
+  }
+  

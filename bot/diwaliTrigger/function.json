@@ -1,0 +1,12 @@
+{
+    "bindings": [
+      {
+        "name": "diwaliTimer1",
+        "type": "timerTrigger",
+        "direction": "in",
+        "schedule": "0 0 10 24 10 *"
+      }
+    ],
+    "scriptFile": "../dist/src/diwaliTrigger.js"
+  }
+  
