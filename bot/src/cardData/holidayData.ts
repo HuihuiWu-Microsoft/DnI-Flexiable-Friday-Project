@@ -1,7 +1,15 @@
-export const chrismasData = {
-    holidayName: "Merry Chirsmas",
-    holidayImageUrl: "https://images.unsplash.com/photo-1498673394965-85cb14905c89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    holidayDate: "12.25",
-    holidayCountry: "US",
-    holidayDescription: "Christmas is an annual festival commemorating the birth of Jesus Christ, observed primarily on December 25[a] as a religious and cultural celebration among billions of people around the world.[2][3][4] A feast central to the Christian liturgical year, it is preceded by the season of Advent or the Nativity Fast and initiates the season of Christmastide, which historically in the West lasts twelve days and culminates on Twelfth Night.[5] Christmas Day is a public holiday in many countries,[6][7][8] is celebrated religiously by a majority of Christians,[9] as well as culturally by many non-Christians,[1][10] and forms an integral part of the holiday season organized around it."
+export const diwaliData = {
+    holidayName: "Diwali - Festival of Lights (दीपावली)",
+    holidayImageUrl: "https://assets.traveltriangle.com/blog/wp-content/uploads/2015/11/diwali-400x226.jpg",
+    holidayDate: "October 24",
+    holidayCountry: "India",
+    holidayDescription: "Diwali is one of the most prominent Hindu festivals of India, is celebrated with a lot of pomp and show. During this festival of lights, houses are decorated with clay lamps, candles, and Ashok leaves. People wear new clothes, participate in family puja, burst crackers, and share sweets with friends, families, and neighbours. It is the most popular festival in India."
   };
+
+  export const thanksGivingData = {
+    holidayName: "Thanksgiving Day",
+    holidayImageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Macys-parade-1979.jpg/640px-Macys-parade-1979.jpg",
+    holidayDate: "Fourth Thursday in November",
+    holidayCountry: "America",
+    holidayDescription: "Thanksgiving is a celebration of thanks for the previous year, with families and friends gathering for a large meal or dinner. Consequently, the Thanksgiving holiday weekend is one of the busiest travel periods of the year. One-sixth of the turkeys consumed annually in the U.S. are eaten around Thanksgiving."
+  }

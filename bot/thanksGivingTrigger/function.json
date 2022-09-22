@@ -1,0 +1,12 @@
+{
+    "bindings": [
+      {
+        "name": "thanksGivingTimer1",
+        "type": "timerTrigger",
+        "direction": "in",
+        "schedule": "* * * * 11 4"
+      }
+    ],
+    "scriptFile": "../dist/src/holidayTrigger.js"
+  }
+  
