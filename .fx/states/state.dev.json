@@ -30,7 +30,5 @@
         "appServicePlanName": "diversityadeva253ccbot",
         "resourceId": "/subscriptions/54bc076b-0767-4fa6-8a59-cb257d9edc3e/resourceGroups/diversityand_inclusive-dev-rg/providers/Microsoft.Web/sites/diversityadeva253ccbot",
         "siteEndpoint": "https://diversityadeva253ccbot.azurewebsites.net"
-    },
-    "fx-resource-cicd": {},
-    "fx-resource-api-connector": {}
+    }
 }

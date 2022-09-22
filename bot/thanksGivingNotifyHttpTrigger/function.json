@@ -1,0 +1,20 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "thanksGivingNotifyHttpTrigger",
+      "methods": [
+        "post"
+      ],
+      "route": "api/thanksgiving"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ],
+  "scriptFile": "../dist/src/holidayTrigger.js"
+}
