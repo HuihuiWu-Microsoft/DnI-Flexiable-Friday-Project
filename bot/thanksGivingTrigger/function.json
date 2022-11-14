@@ -1,7 +1,7 @@
 {
     "bindings": [
       {
-        "name": "thanksGivingTimer1",
+        "name": "thanksGivingTimer",
         "type": "timerTrigger",
         "direction": "in",
         "schedule": "* * * * 11 4"
