@@ -1,4 +1,4 @@
-// The holidayDate field should be represented in locale format
+// Regular holidays, the holidayDate field should be represented in locale format
 export const holidaysData = [
   {
     holidayName: "Diwali - Festival of Lights (दीपावली)",
