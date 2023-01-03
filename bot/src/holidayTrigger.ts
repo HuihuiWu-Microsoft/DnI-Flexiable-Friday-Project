@@ -25,7 +25,7 @@ const timerTrigger: AzureFunction = async function (context: Context, myTimer: a
     //query the holidays that will happen in next 24hr
     const now = new Date();
     const within24hr = Date.parse(new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours() + 24, now.getMinutes()).toString());
-    const holidayDate = Date.parse("2022-" + holiday.holidayDate);
+    const holidayDate = Date.parse("2023-" + holiday.holidayDate);
     if (holidayDate >= now.getTime() && holidayDate < within24hr) {
       sendHolidayCard(holiday);
     }
