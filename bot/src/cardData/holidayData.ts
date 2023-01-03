@@ -24,7 +24,7 @@ export const holidaysData = [
   },
   {
     holidayName: "Tomb Sweeping Day",
-    holidayImageUrl: "https://assets.traveltriangle.com/blog/wp-content/uploads/2015/11/diwali-400x226.jpghttps://upload.wikimedia.org/wikipedia/commons/a/a0/Ching_Ming_comforts_to_heaven.png",
+    holidayImageUrl: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Ching_Ming_comforts_to_heaven.png",
     holidayDate: "04-05 00:00:00 GMT+8",
     holidayCountry: "China",
     holidayDescription: "The Qingming festival or Ching Ming Festival, also known as Tomb-Sweeping Day in English (sometimes also called Chinese Memorial Day or Ancestors' Day), is a traditional Chinese festival observed by the Han Chinese of mainland China, Hong Kong, and Macau, and by the ethnic Chinese of Taiwan, Malaysia, Singapore, Cambodia, Indonesia, Philippines, Thailand, Vietnam and Panama. It falls on the first day of the fifth solar term of the traditional Chinese lunisolar calendar. This makes it the 15th day after the Spring Equinox, either 4, 5 or 6 April in a given year. During Qingming, Chinese families visit the tombs of their ancestors to clean the gravesites, pray to their ancestors and make ritual offerings. Offerings would typically include traditional food dishes and the burning of joss sticks and joss paper. The holiday recognizes the traditional reverence of one's ancestors in Chinese culture."
@@ -67,7 +67,7 @@ export const holidaysData = [
   },
   {
     holidayName: "Family Day",
-    holidayImageUrl: "https://www.google.com.hk/url?sa=i&url=https%3A%2F%2Fwww.westernunion.com%2Fblog%2Fen%2Fca%2Fwhat-does-family-day-mean-in-canada%2F&psig=AOvVaw377Z1uVB12jXCld97Zxg7U&ust=1669361617277000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCMj8lO-mxvsCFQAAAAAdAAAAABAD",
+    holidayImageUrl: "https://www.westernunion.com/blog/wp-content/uploads/2022/02/What-does-Family-Day-mean-in-Canada.jpg",
     holidayDate: "02-21 00:00:00 GMT-5",
     holidayCountry: "Canada",
     holidayDescription: "Nearly two- thirds of Canadians reside in a province that observes a statutory holiday on the third Monday of February.The holiday is called Family Day in five provinces(Alberta, British Columbia, New Brunswick, Ontario and Saskatchewan), Louis Riel Day in Manitoba, and Islander Day in Prince Edward Island.There is no federally established Family Day. This holiday was first observed in Alberta in 1990, followed by Saskatchewan in 2007 and Ontario in 2008. On May 28, 2012, the BC government announced that Family Day would be observed on the second Monday in February each year, starting February 11, 2013. The week of its observance was changed from the second Monday of February to the third Monday starting in 2019. In April 2017, the NB government announced the family statutory holiday to begin in February 2018. In February 2018, the BC government announced that Family Day would move to the third Monday in February from 2019 onward, aligning the holiday with other Canadian provinces."
@@ -95,7 +95,7 @@ export const holidaysData = [
   },
   {
     holidayName: "Civic Holiday",
-    holidayImageUrl: "https://www.google.com.hk/url?sa=i&url=https%3A%2F%2Fwww.shutterstock.com%2Fsearch%2Fcivic-holiday&psig=AOvVaw1CTLG0Q_0rHn4LH8m8cY0C&ust=1669361474741000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCOC8r4inxvsCFQAAAAAdAAAAABAD",
+    holidayImageUrl: "https://www.shutterstock.com/image-vector/happy-civic-holiday-on-canada-600w-1472193548.jpg",
     holidayDate: "08-01 00:00:00 GMT-5",
     holidayCountry: "Canada",
     holidayDescription: "Civic Holiday(French: congé civique) is a public holiday in Canada celebrated on the first Monday in August. Though the first Monday of August is celebrated in most of Canada as a public holiday, it is only officially known as 'Civic Holiday' in Nunavut and the Northwest Territories, where it is a territorial statutory holiday. In other provinces and municipalities, the holiday is known by a variety of names, including British Columbia Day in British Columbia, New Brunswick Day in New Brunswick, and Saskatchewan Day in Saskatchewan; all of these places celebrate the date as a provincial statutory holiday."
@@ -109,7 +109,7 @@ export const holidaysData = [
   },
   {
     holidayName: "Thanksgiving Day",
-    holidayImageUrl: "https://www.google.com.hk/imgres?imgurl=https%3A%2F%2Fwww.holidayscalendar.com%2Fwp-content%2Fuploads%2F2016%2F11%2FCanadian-Thanksgiving_ss_515459155.jpg&imgrefurl=https%3A%2F%2Fwww.holidayscalendar.com%2Fevent%2Fcanadian-thanksgiving%2F&tbnid=SA13aUlspQ3SBM&vet=12ahUKEwjzyYnIp8b7AhXUl9gFHZgiD1kQMygBegUIARDQAQ..i&docid=zQ9x6Mk1PXRJpM&w=1000&h=709&q=Thanksgiving%20Day%20canada&ved=2ahUKEwjzyYnIp8b7AhXUl9gFHZgiD1kQMygBegUIARDQAQ",
+    holidayImageUrl: "https://www.holidayscalendar.com/wp-content/uploads/2016/11/Canadian-Thanksgiving_ss_515459155.jpg",
     holidayDate: "10-10 00:00:00 GMT-5",
     holidayCountry: "Canada",
     holidayDescription: "Thanksgiving (French: l'Action de grâce), occurring on the second Monday in October, is an annual Canadian holiday to give thanks at the close of the harvest season. Although the original act of Parliament references God and the holiday is celebrated in churches, the holiday is mostly celebrated in a secular manner. Thanksgiving is a statutory holiday in all provinces in Canada, except for New Brunswick and Nova Scotia. While businesses may remain open in these provinces, the holiday is nonetheless recognized and celebrated regardless of its status."
