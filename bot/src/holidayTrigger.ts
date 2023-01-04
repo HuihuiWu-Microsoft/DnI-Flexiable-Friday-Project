@@ -4,7 +4,7 @@ import { NotificationTargetType} from "@microsoft/teamsfx";
 import holidayTemplate from "./adaptiveCards/notification-holiday.json";
 import { HolidayCardData } from "./cardModels";
 import { bot } from "./internal/initialize";
-import { diwaliData, thanksGivingData } from "./cardData/holidayData";
+import { holidaysData, thanksGivingData } from "./cardData/holidayData";
 
 // An Azure Function timer trigger.
 //
@@ -14,13 +14,25 @@ import { diwaliData, thanksGivingData } from "./cardData/holidayData";
 // to suit your needs. You can poll an API or retrieve data from a database, and based on the data, you can
 // send an Adaptive Card as required.
 const timerTrigger: AzureFunction = async function (context: Context, myTimer: any): Promise<void> {
-  let data;
-  if(context.bindings.diwaliTimer1 || context.bindings.diwaliNotifyHttpTrigger){
-    data = diwaliData;
-  } else if ( context.bindings.thanksGivingTimer1 || context.bindings.thanksGivingNotifyHttpTrigger){
-    data = thanksGivingData;
-  }
+  // Send holiday card for holidays that trigger time can't be calculated
+  if(context.bindings.thanksGivingTimer){
+    await sendHolidayCard(thanksGivingData);
+    return;
+  } 
 
+  // Send holiday card for regular holidays that happen in next 24hrs
+  for (const holiday of holidaysData) {
+    //query the holidays that will happen in next 24hr
+    const now = new Date();
+    const within24hr = Date.parse(new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours() + 24, now.getMinutes()).toString());
+    const holidayDate = Date.parse("2023-" + holiday.holidayDate);
+    if (holidayDate >= now.getTime() && holidayDate < within24hr) {
+      sendHolidayCard(holiday);
+    }
+  }
+};
+
+async function sendHolidayCard(data: any){
   const card = AdaptiveCards.declare<HolidayCardData>(holidayTemplate).render(data);
 
   // By default this function will iterate all the installation points and send an Adaptive Card
@@ -47,6 +59,6 @@ const timerTrigger: AzureFunction = async function (context: Context, myTimer: a
       await target.sendAdaptiveCard(card);
     }
   }
-};
+}
 
 export default timerTrigger;
