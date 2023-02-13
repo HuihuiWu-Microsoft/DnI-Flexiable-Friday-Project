@@ -18,7 +18,7 @@ export const holidaysData = [
   {
     holidayName: "Spring Festival",
     holidayImageUrl: "https://www.thatsmags.com/image/view/202001/explainer-spring.jpg",
-    holidayDate: "01-22 00:00:00 GMT+8",
+    holidayDate: "02-11 00:00:00 GMT+8",
     holidayCountry: "China",
     holidayDescription: "Chinese New Year is the festival that celebrates the beginning of a new year on the traditional lunisolar and solar Chinese calendar. In Chinese and other East Asian cultures, the festival is commonly referred to as the Spring Festival (simplified Chinese: 春节; traditional Chinese: 春節; pinyin: Chūnjié) as the spring season in the lunisolar calendar traditionally starts with lichun, the first of the twenty-four solar terms which the festival celebrates around the time of the Chinese New Year. Marking the end of winter and the beginning of the spring season, observances traditionally take place from New Year’s Eve, the evening preceding the first day of the year to the Lantern Festival, held on the 15th day of the year. The first day of Chinese New Year begins on the new moon that appears between 21 January and 20 February."
   },

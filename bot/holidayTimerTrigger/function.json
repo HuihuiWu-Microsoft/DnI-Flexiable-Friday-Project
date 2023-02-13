@@ -4,7 +4,7 @@
       "name": "holidayTimer",
       "type": "timerTrigger",
       "direction": "in",
-      "schedule": "0 0 2 * * *"
+      "schedule": "0 * * * * *"
     }
   ],
   "scriptFile": "../dist/src/holidayTrigger.js"

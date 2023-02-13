@@ -14,49 +14,64 @@ import { holidaysData, thanksGivingData } from "./cardData/holidayData";
 // to suit your needs. You can poll an API or retrieve data from a database, and based on the data, you can
 // send an Adaptive Card as required.
 const timerTrigger: AzureFunction = async function (context: Context, myTimer: any): Promise<void> {
+  context.log("Function triggerred-2");
   // Send holiday card for holidays that trigger time can't be calculated
   if(context.bindings.thanksGivingTimer){
-    await sendHolidayCard(thanksGivingData);
+    context.log("ThanksGiving timer, send card and return.");
+    await sendHolidayCard(thanksGivingData, context);
     return;
   } 
 
+  context.log("Start iterate all holidays...");
   // Send holiday card for regular holidays that happen in next 24hrs
   for (const holiday of holidaysData) {
     //query the holidays that will happen in next 24hr
     const now = new Date();
     const within24hr = Date.parse(new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours() + 24, now.getMinutes()).toString());
     const holidayDate = Date.parse("2023-" + holiday.holidayDate);
+    context.log("Current holiday:" + holiday.holidayName);
     if (holidayDate >= now.getTime() && holidayDate < within24hr) {
-      sendHolidayCard(holiday);
+      context.log("Send holiday card");
+      await sendHolidayCard(holiday, context);
     }
   }
 };
 
-async function sendHolidayCard(data: any){
+async function sendHolidayCard(data: any, context: Context){
   const card = AdaptiveCards.declare<HolidayCardData>(holidayTemplate).render(data);
 
   // By default this function will iterate all the installation points and send an Adaptive Card
   // to every installation.
+  let i = 0;
+  context.log("Installtion number " + (await (await bot.notification.installations()).length));
   for (const target of await bot.notification.installations()) {
       // List all members in the Group Chat and send the Adaptive Card to each Team member
     if (target.type === NotificationTargetType.Group) {
       const members = await target.members();
       for (const member of members) {
         await member.sendAdaptiveCard(card);
+        i = i +1;
+        context.log("Holiday card sent to " + member.account);
       }
     }
+    context.log("Number of holiday card sent to Group: " + i);
 
+    let j = 0;
       // List all members in the Team and send the Adaptive Card to each Team member
       if (target.type === NotificationTargetType.Channel) {
       const members = await target.members();
       for (const member of members) {
         await member.sendAdaptiveCard(card);
+        j = j+1;
+        context.log("Holiday card sent to " + member.account);
       }
     }
+    context.log("Number of holiday card sent to Group: " + j);
 
       // Directly notify the individual person
       if (target.type === NotificationTargetType.Person) {
       await target.sendAdaptiveCard(card);
+      context.log("Holiday card sent to individual");
     }
   }
 }
