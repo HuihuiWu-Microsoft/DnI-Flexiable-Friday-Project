@@ -4,11 +4,11 @@
       "authLevel": "anonymous",
       "type": "httpTrigger",
       "direction": "in",
-      "name": "thanksGivingNotifyHttpTrigger",
+      "name": "req",
       "methods": [
         "post"
       ],
-      "route": "api/thanksgiving"
+      "route": "api/messages"
     },
     {
       "type": "http",
@@ -16,5 +16,5 @@
       "name": "res"
     }
   ],
-  "scriptFile": "../dist/src/holidayTrigger.js"
+  "scriptFile": "../dist/src/internal/messageHandler.js"
 }

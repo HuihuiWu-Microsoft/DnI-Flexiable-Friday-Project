@@ -5,14 +5,14 @@
   "body": [
     {
       "type": "TextBlock",
-      "text": "${storyTitle}",
+      "text": "${title}",
       "size": "Large",
       "weight": "Bolder",
       "wrap": true
     },
     {
       "type": "TextBlock",
-      "text": "${storyImage}",
+      "text": "${appName}",
       "isSubtle": true,
       "color": "Accent",
       "weight": "Bolder",
@@ -21,7 +21,7 @@
     },
     {
       "type": "TextBlock",
-      "text": "${storyDescription}",
+      "text": "${description}",
       "isSubtle": true,
       "wrap": true
     }
@@ -30,7 +30,7 @@
     {
       "type": "Action.OpenUrl",
       "title": "View Details",
-      "url": "${storyUrl}"
+      "url": "${notificationUrl}"
     }
   ]
 }

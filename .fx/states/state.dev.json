@@ -1,34 +1,32 @@
 {
     "solution": {
-        "teamsAppTenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
-        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
         "provisionSucceeded": true,
+        "teamsAppTenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
         "subscriptionId": "e24d88be-b95f-4815-ba25-ae48defc8da2",
-        "subscriptionName": "Teams Cloud - Staging",
-        "needCreateResourceGroup": false,
-        "resourceGroupName": "diversityand_inclusive-dev-rg",
+        "subscriptionName": "Teams Cloud - Staging with TTL = 30 Days",
+        "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "needCreateResourceGroup": true,
+        "resourceGroupName": "DiversityPulse-dev-rg",
         "location": "East US",
-        "resourceNameSuffix": "c56da2"
+        "resourceNameSuffix": "98e791"
     },
     "fx-resource-appstudio": {
         "tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
-        "teamsAppId": "b8bca080-d0f6-4f43-af9d-2e2ddf297044",
-        "teamsAppUpdatedAt": 1663318427308
+        "teamsAppId": "1b171660-8690-483c-a68f-a9c0969251a1"
     },
     "fx-resource-bot": {
-        "botId": "a6c3bf94-8398-43bd-9b59-c2dff5800a3f",
+        "botId": "b6a4ae0b-e382-4b61-abe4-993de6dcb3d6",
         "botPassword": "{{fx-resource-bot.botPassword}}",
-        "objectId": "f0ee1253-38f8-4262-9881-4ab1a156e682",
-        "skuName": "B1",
-        "siteName": "diversityadeva254ccbot",
-        "validDomain": "diversityadeva254ccbot.azurewebsites.net",
-        "appServicePlanName": "diversityadeva254ccbot",
-        "resourceId": "/subscriptions/e24d88be-b95f-4815-ba25-ae48defc8da2/resourceGroups/diversityand_inclusive-dev-rg/providers/Microsoft.Web/sites/diversityadeva254ccbot",
-        "siteEndpoint": "https://diversityadeva254ccbot.azurewebsites.net"
+        "sku": "B1",
+        "appName": "diversityp4b8dc0bot",
+        "domain": "diversityp4b8dc0bot.azurewebsites.net",
+        "appServicePlanName": "diversityp4b8dc0bot",
+        "functionAppResourceId": "/subscriptions/e24d88be-b95f-4815-ba25-ae48defc8da2/resourceGroups/DiversityPulse-dev-rg/providers/Microsoft.Web/sites/diversityp4b8dc0bot",
+        "functionEndpoint": "https://diversityp4b8dc0bot.azurewebsites.net"
     },
     "fx-resource-identity": {
-        "identityName": "diversityadeva254cc",
-        "identityResourceId": "/subscriptions/e24d88be-b95f-4815-ba25-ae48defc8da2/resourceGroups/diversityand_inclusive-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/diversityadeva254cc",
-        "identityClientId": "6ad6a0bc-59d6-4756-9d0f-58fb59634d9f"
+        "identityName": "diversityp4b8dc0",
+        "identityResourceId": "/subscriptions/e24d88be-b95f-4815-ba25-ae48defc8da2/resourceGroups/DiversityPulse-dev-rg/providers/Microsoft.ManagedIdentity/userAssignedIdentities/diversityp4b8dc0",
+        "identityClientId": "4d9b12ad-9cb9-4084-a63e-212902759026"
     }
 }

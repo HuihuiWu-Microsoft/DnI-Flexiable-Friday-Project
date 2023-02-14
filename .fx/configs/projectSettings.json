@@ -1,8 +1,38 @@
 {
-    "appName": "Diversity and Inclusive",
-    "projectId": "407aee6b-642d-4b95-bfcc-7ee2a4d5ade0",
+    "appName": "Diversity Pulse",
+    "projectId": "e0b28b21-3f97-4d65-a6e0-4a9c54d146e0",
     "version": "2.1.0",
-    "isFromSample": false,
+    "components": [
+        {
+            "name": "teams-bot",
+            "hosting": "azure-function",
+            "provision": false,
+            "deploy": true,
+            "capabilities": [
+                "notification"
+            ],
+            "build": true,
+            "folder": "bot",
+            "artifactFolder": "bot"
+        },
+        {
+            "name": "bot-service",
+            "provision": true
+        },
+        {
+            "name": "azure-function",
+            "scenario": "Bot",
+            "connections": [
+                "identity",
+                "teams-bot"
+            ]
+        },
+        {
+            "name": "identity",
+            "provision": true
+        }
+    ],
+    "programmingLanguage": "typescript",
     "solutionSettings": {
         "name": "fx-solution-azure",
         "version": "1.0.0",
@@ -18,7 +48,6 @@
             "fx-resource-identity"
         ]
     },
-    "programmingLanguage": "typescript",
     "pluginSettings": {
         "fx-resource-bot": {
             "host-type": "azure-function",
@@ -26,36 +55,5 @@
                 "notification"
             ]
         }
-    },
-    "components": [
-        {
-            "hosting": "azure-function",
-            "name": "teams-bot",
-            "build": true,
-            "provision": true,
-            "folder": "bot",
-            "capabilities": [
-                "notification"
-            ],
-            "sso": false,
-            "deploy": true,
-            "artifactFolder": "bot"
-        },
-        {
-            "name": "azure-function",
-            "connections": [
-                "identity",
-                "teams-bot"
-            ],
-            "provision": true,
-            "scenario": "Bot"
-        },
-        {
-            "name": "bot-service",
-            "provision": true
-        },
-        {
-            "name": "identity"
-        }
-    ]
+    }
 }

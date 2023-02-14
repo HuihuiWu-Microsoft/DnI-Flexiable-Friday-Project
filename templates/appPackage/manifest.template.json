@@ -43,6 +43,6 @@
         "messageTeamMembers"
     ],
     "validDomains": [
-        "{{state.fx-resource-bot.validDomain}}"
+        "{{state.fx-resource-bot.domain}}"
     ]
 }
