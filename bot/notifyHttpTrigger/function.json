@@ -4,11 +4,11 @@
       "authLevel": "anonymous",
       "type": "httpTrigger",
       "direction": "in",
-      "name": "diwaliNotifyHttpTrigger",
+      "name": "req",
       "methods": [
         "post"
       ],
-      "route": "api/diwali"
+      "route": "api/notification"
     },
     {
       "type": "http",
@@ -16,5 +16,5 @@
       "name": "res"
     }
   ],
-  "scriptFile": "../dist/src/holidayTrigger.js"
+  "scriptFile": "../dist/src/httpTrigger.js"
 }

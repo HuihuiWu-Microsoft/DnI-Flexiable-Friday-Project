@@ -9,7 +9,8 @@
             "presentation": {
                 "group": "remote",
                 "order": 1
-            }
+            },
+            "internalConsoleOptions": "neverOpen"
         },
         {
             "name": "Launch Remote (Chrome)",
@@ -19,7 +20,8 @@
             "presentation": {
                 "group": "remote",
                 "order": 2
-            }
+            },
+            "internalConsoleOptions": "neverOpen"
         },
         {
             "name": "Launch Bot (Edge)",
@@ -32,7 +34,8 @@
             "presentation": {
                 "group": "all",
                 "hidden": true
-            }
+            },
+            "internalConsoleOptions": "neverOpen"
         },
         {
             "name": "Launch Bot (Chrome)",
@@ -45,7 +48,8 @@
             "presentation": {
                 "group": "all",
                 "hidden": true
-            }
+            },
+            "internalConsoleOptions": "neverOpen"
         },
         {
             "name": "Attach to Bot",
@@ -56,7 +60,8 @@
             "presentation": {
                 "group": "all",
                 "hidden": true
-            }
+            },
+            "internalConsoleOptions": "neverOpen"
         }
     ],
     "compounds": [
@@ -66,7 +71,7 @@
                 "Launch Bot (Edge)",
                 "Attach to Bot"
             ],
-            "preLaunchTask": "Pre Debug Check & Start All",
+            "preLaunchTask": "Start Teams App Locally",
             "presentation": {
                 "group": "all",
                 "order": 1
@@ -79,7 +84,7 @@
                 "Launch Bot (Chrome)",
                 "Attach to Bot"
             ],
-            "preLaunchTask": "Pre Debug Check & Start All",
+            "preLaunchTask": "Start Teams App Locally",
             "presentation": {
                 "group": "all",
                 "order": 2

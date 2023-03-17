@@ -1,7 +1,6 @@
 @secure()
 param provisionParameters object
 param botEndpoint string
-
 var resourceBaseName = provisionParameters.resourceBaseName
 var botAadAppClientId = provisionParameters['botAadAppClientId'] // Read AAD app client id for Azure Bot Service from parameters
 var botServiceName = contains(provisionParameters, 'botServiceName') ? provisionParameters['botServiceName'] : '${resourceBaseName}' // Try to read name for Azure Bot Service from parameters
@@ -9,7 +8,7 @@ var botServiceSku = contains(provisionParameters, 'botServiceSku') ? provisionPa
 var botDisplayName = contains(provisionParameters, 'botDisplayName') ? provisionParameters['botDisplayName'] : '${resourceBaseName}' // Try to read display name for Azure Bot Service from parameters
 
 // Register your web service as a bot with the Bot Framework
-resource botService 'Microsoft.BotService/botServices@2021-03-01' = {
+resource azureBot 'Microsoft.BotService/botServices@2021-03-01' = {
   kind: 'azurebot'
   location: 'global'
   name: botServiceName
@@ -25,7 +24,7 @@ resource botService 'Microsoft.BotService/botServices@2021-03-01' = {
 
 // Connect the bot service to Microsoft Teams
 resource botServiceMsTeamsChannel 'Microsoft.BotService/botServices/channels@2021-03-01' = {
-  parent: botService
+  parent: azureBot
   location: 'global'
   name: 'MsTeamsChannel'
   properties: {

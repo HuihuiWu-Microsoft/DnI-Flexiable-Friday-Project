@@ -2,7 +2,7 @@
  * Adaptive Card data model. Properties can be referenced in an adaptive card via the `${var}`
  * Adaptive Card syntax.
  */
- export interface StoryData {
+export interface StoryData {
   storyTitle: string;
   storyImage: string;
   storyDescription: string;
