@@ -34,7 +34,7 @@ export const holidaysData = [
     holidayImageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8poMYt_d5l2OXHQc-iG5gJwFEs2xS3mwP6A&usqp=CAU",
     holidayDate: "05-01 00:00:00 GMT+8",
     holidayCountry: "China",
-    holidayDescription: "Diwali is one of the most prominent Hindu festivals of India, is celebrated with a lot of pomp and show. During this festival of lights, houses are decorated with clay lamps, candles, and Ashok leaves. People wear new clothes, participate in family puja, burst crackers, and share sweets with friends, families, and neighbours. It is the most popular festival in India.China"
+    holidayDescription: "1 May is a statutory holiday in the People's Republic of China. It was a three-day holiday until 2008, but was only one day between 2008 and 2019, and was restored to three days after 2019. However, the actual time off is often longer than the time off in the regulations, and the extra time off is usually supplemented by another two weekends, but since the extra time is not under an official holiday, the extra days must be \"made up\" by working on the preceding or following weekend. For example, in 2013, 1 May fell on Wednesday. Most workplaces, including all government offices, took Monday 29 April, Tuesday 30 April, and Wednesday 1 May off. As the first two days were not statutory holidays they had to be \"made up\" by working the preceding weekend (27 and 28 April)."
   },
   {
     holidayName: "Dragon Boat Festival",
