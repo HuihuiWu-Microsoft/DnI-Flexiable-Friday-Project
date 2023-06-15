@@ -3,7 +3,7 @@ import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
 import { NotificationTargetType } from "@microsoft/teamsfx";
 import { holidaysData } from "./cardData/holidayData";
 import { HolidayCardData } from "./cardModels";
-import { bot } from "./internal/initialize";
+import { notificationApp } from "./internal/initialize";
 import holidayTemplate from "./adaptiveCards/notification-holiday.json";
 
 // An Azure Function timer trigger.
@@ -24,7 +24,7 @@ const timerTrigger: AzureFunction = async function (context: Context, myTimer: a
     if (holidayDate >= now.getTime() && holidayDate < within24hr) {
       const card = AdaptiveCards.declare<HolidayCardData>(holidayTemplate).render(holiday);
 
-      for (const target of await bot.notification.installations()) {
+      for (const target of await notificationApp.notification.installations()) {
         // List all members in the Group Chat and send the Adaptive Card to each Team member
         if (target.type === NotificationTargetType.Group) {
           const members = await target.members();
