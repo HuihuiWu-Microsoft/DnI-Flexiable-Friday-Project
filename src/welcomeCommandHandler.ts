@@ -9,7 +9,7 @@ import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
 import { CommonCardData } from "./cardModels";
 
 export class WelcomeCommandHandler implements TeamsFxBotCommandHandler {
-  triggerPatterns: TriggerPatterns = "welcome";
+  triggerPatterns: TriggerPatterns = "/^welcome(.*?)$/i";
 
   async handleCommandReceived(
     context: TurnContext,
