@@ -4,7 +4,7 @@ import {
   TeamsFxBotCommandHandler,
   TriggerPatterns,
 } from "@microsoft/teamsfx";
-import doSomethingCard from "./adaptiveCards/welcome.json";
+import welcomeCardTemplate from "./adaptiveCards/welcome.json";
 import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
 import { CommonCardData } from "./cardModels";
 
@@ -22,7 +22,7 @@ export class WelcomeCommandHandler implements TeamsFxBotCommandHandler {
       title: "Welcome",
       body: "Congratulations! Your D&I bot is running. Click the documentation below to learn more about D&I.",
     };
-    const cardJson = AdaptiveCards.declare(doSomethingCard).render(cardData);
+    const cardJson = AdaptiveCards.declare(welcomeCardTemplate).render(cardData);
     return MessageFactory.attachment(CardFactory.adaptiveCard(cardJson));
   }
 }
