@@ -1,0 +1,25 @@
+{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "size": "Medium",
+      "weight": "Bolder",
+      "text": "Your D&I Bot is Running"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Congratulations! Your D&I bot is running. Click the documentation below to learn more about D&I.",
+      "wrap": true
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.OpenUrl",
+      "title": "D&I Docs",
+      "url": "https://microsoft.sharepoint.com/teams/DILearning"
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.4"
+}

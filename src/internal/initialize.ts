@@ -20,4 +20,10 @@ export const notificationApp = new ConversationBot({
       "blobstorage"
     ),
   },
+  command: {
+    enabled: true,
+    commands: [ 
+      new WelcomeCommandHandler()
+    ],
+  }
 });

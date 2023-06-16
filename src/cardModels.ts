@@ -16,3 +16,8 @@ export interface HolidayCardData {
   holidayCountry: string;
   holidayDescription: string;
 }
+
+export interface CommonCardData {
+  title: string;
+  body: string;
+}
