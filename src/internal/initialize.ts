@@ -2,6 +2,7 @@ import { BotBuilderCloudAdapter } from "@microsoft/teamsfx";
 import ConversationBot = BotBuilderCloudAdapter.ConversationBot;
 import config from "./config";
 import { BlobsStorage } from "../storage/blobsStorage";
+import { WelcomeCommandHandler } from "../welcomeCommandHandler";
 
 // Create bot.
 export const notificationApp = new ConversationBot({
