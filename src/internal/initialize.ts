@@ -16,7 +16,7 @@ export const notificationApp = new ConversationBot({
   notification: {
     enabled: true,
     storage: new BlobsStorage(
-      "DefaultEndpointsProtocol=https;AccountName=diversitypulse;AccountKey=/Z3kX3U1yh6GxyRQBGLQE8KqMJv3M9nm6Cm7qcp9hi/um5EHWDgh0oC0Jz1nPDC0YZOip87Xu4qI+ASttfasGg==;EndpointSuffix=core.windows.net",
+      process.env.STORAGE_CONNECTION_STRING,
       "blobstorage"
     ),
   },
