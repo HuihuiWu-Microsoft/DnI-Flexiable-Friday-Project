@@ -1,5 +1,7 @@
 import { OpenAIClient, AzureKeyCredential } from "@azure/openai";
-import { TeamsActivityHandler, TurnContext } from "botbuilder";
+import { CardFactory, TeamsActivityHandler, TurnContext } from "botbuilder";
+import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
+import welcomeCard from "./adaptiveCards/welcome.json";
 
 // An empty teams activity handler.
 // You can add your customization code here to extend your bot logic if needed.
@@ -27,6 +29,21 @@ export class TeamsBot extends TeamsActivityHandler {
         await context.sendActivity(choice.text);
       }
       
+      // By calling next() you ensure that the next BotHandler is run.
+      await next();
+    });
+
+    this.onMembersAdded(async (context, next) => {
+      console.log("Running with MembersAdded Activity.");
+
+      const membersAdded = context.activity.membersAdded;
+      for (const member of membersAdded) {
+        if (member.id !== context.activity.recipient.id) {
+          const cardJson = AdaptiveCards.declareWithoutData(welcomeCard).render();
+          await context.sendActivity({ attachments: [CardFactory.adaptiveCard(cardJson)] });
+        }
+      }
+
       // By calling next() you ensure that the next BotHandler is run.
       await next();
     });
