@@ -23,7 +23,7 @@ export class QueryDateCommandHandler implements TeamsFxBotCommandHandler {
 
     const queryDate = new Date(queryDateString);
     for (const holiday of holidaysData) {
-        const holidayDate = Date.parse(queryDate.getFullYear() + "-" + holiday.holidayDate);
+        const holidayDate = Date.parse(`${queryDate.getFullYear()}-${holiday.holidayDate}`);
         if (queryDate.getTime() === holidayDate) {
             const card = AdaptiveCards.declare<HolidayCardData>(holidayTemplate).render(holiday);
             return MessageFactory.attachment(CardFactory.adaptiveCard(card));
