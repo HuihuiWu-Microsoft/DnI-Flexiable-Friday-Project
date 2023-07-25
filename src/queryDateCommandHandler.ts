@@ -10,7 +10,7 @@ import { HolidayCardData } from "./cardModels";
 import holidayTemplate from "./adaptiveCards/notification-holiday.json";
 
 export class QueryDateCommandHandler implements TeamsFxBotCommandHandler {
-  triggerPatterns: TriggerPatterns = /^Query date (.*?)$/i;
+  triggerPatterns: TriggerPatterns = /^Query holiday on (.*?)$/i;
 
   async handleCommandReceived(
     context: TurnContext,
@@ -23,12 +23,32 @@ export class QueryDateCommandHandler implements TeamsFxBotCommandHandler {
 
     const queryDate = new Date(queryDateString);
     for (const holiday of holidaysData) {
-        const holidayDate = Date.parse(`${queryDate.getFullYear()}-${holiday.holidayDate}`);
-        if (queryDate.getTime() === holidayDate) {
-            const card = AdaptiveCards.declare<HolidayCardData>(holidayTemplate).render(holiday);
-            return MessageFactory.attachment(CardFactory.adaptiveCard(card));
-        }
+      const holidayDate = this._getDateFromHolidayData(holiday.holidayDate);
+      if (queryDate.getMonth() === holidayDate.month && queryDate.getDate() === holidayDate.day) {
+          const card = AdaptiveCards.declare<HolidayCardData>(holidayTemplate).render(holiday);
+          return MessageFactory.attachment(CardFactory.adaptiveCard(card));
+      }
     }
     return MessageFactory.text("No holiday on this date.");
+  }
+
+  private _getDateFromHolidayData(holidayDate: string): {
+    month: number;
+    day: number} {
+
+    const datePattern = /^(\d{2})-(\d{2}) (.*)$/;
+    const match = holidayDate.match(datePattern);
+    if (match) {
+      return {
+        month: parseInt(match[0]),
+        day: parseInt(match[1]),
+      }
+    }
+
+    const date = new Date(holidayDate);
+    return {
+      month: date.getMonth(),
+      day: date.getDate(), 
+    }
   }
 }

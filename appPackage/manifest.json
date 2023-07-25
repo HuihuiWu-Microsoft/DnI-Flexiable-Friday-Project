@@ -42,7 +42,7 @@
                     ],
                     "commands": [
                         {
-                            "title": "Query date MM/DD",
+                            "title": "Query holiday on MM/DD",
                             "description": "A query command to check if this day is a holiday"
                         }
                     ]
