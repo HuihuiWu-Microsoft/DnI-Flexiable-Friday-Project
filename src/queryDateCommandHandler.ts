@@ -22,6 +22,10 @@ export class QueryDateCommandHandler implements TeamsFxBotCommandHandler {
     console.log(`queryDate: ${queryDateString}`);
 
     const queryDate = new Date(queryDateString);
+    if (isNaN(queryDate.getTime())) {
+      return MessageFactory.text("Invalid date format. Please enter date in the format of MM/DD, such as 01/01.");
+    }
+    
     for (const holiday of holidaysData) {
       const holidayDate = this._getDateFromHolidayData(holiday.holidayDate);
       if (queryDate.getMonth() === holidayDate.month && queryDate.getDate() === holidayDate.day) {
