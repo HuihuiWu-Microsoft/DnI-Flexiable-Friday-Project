@@ -19,6 +19,12 @@
     },
     "botDisplayName": {
       "value": "Diversity Pulse"
+    },
+    "envName": {
+      "value": "${{TEAMSFX_ENV}}"
+    },
+    "teamsAppId": {
+      "value": "${{TEAMS_APP_ID}}"
     }
   }
 }

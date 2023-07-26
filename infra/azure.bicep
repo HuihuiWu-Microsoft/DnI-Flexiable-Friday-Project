@@ -16,6 +16,11 @@ param storageSKU string
 @maxLength(42)
 param botDisplayName string
 
+@description('Env File Name, such as dev')
+param envName string
+@description('TEAMS APP ID')
+param teamsAppId string
+
 param serverfarmsName string = resourceBaseName
 param functionAppName string = resourceBaseName
 param location string = resourceGroup().location
@@ -87,6 +92,14 @@ resource functionApp 'Microsoft.Web/sites@2021-02-01' = {
         {
           name: 'BOT_PASSWORD'
           value: botAadAppClientSecret
+        }
+        {
+          name: 'TEAMSFX_ENV'
+          value: envName
+        }
+        {
+          name: 'TEAMS_APP_ID'
+          value: teamsAppId
         }
         {
           name: 'RUNNING_ON_AZURE'
