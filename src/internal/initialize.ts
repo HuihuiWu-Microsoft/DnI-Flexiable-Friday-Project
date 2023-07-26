@@ -2,6 +2,7 @@ import { BotBuilderCloudAdapter } from "@microsoft/teamsfx";
 import ConversationBot = BotBuilderCloudAdapter.ConversationBot;
 import config from "./config";
 import { BlobsStorage } from "../storage/blobsStorage";
+import { QueryDateCommandHandler } from "../queryDateCommandHandler";
 
 const BlobStorageName = config.storageConnectionString;
 const BlobContainerName =
@@ -28,4 +29,10 @@ export const notificationApp = new ConversationBot({
         )
       : undefined,
   },
+  command: {
+    enabled: true,
+    commands: [
+      new QueryDateCommandHandler(),
+    ]
+  }
 });
