@@ -23,6 +23,7 @@
         "url": "https://github.com"
     },
     "dependencies": {
+        "@azure/openai": "^1.0.0-beta.2",
         "@azure/storage-blob": "^12.14.0",
         "@microsoft/adaptivecards-tools": "^1.0.0",
         "@microsoft/teamsfx": "^2.2.0",
