@@ -10,7 +10,8 @@ import { HolidayCardData } from "./cardModels";
 import holidayTemplate from "./adaptiveCards/notification-holiday.json";
 
 export class QueryDateCommandHandler implements TeamsFxBotCommandHandler {
-  triggerPatterns: TriggerPatterns = /^Query holiday on (.*?)$/i;
+  public static regex = /^Query holiday on (.*?)$/i;
+  triggerPatterns: TriggerPatterns = QueryDateCommandHandler.regex;
 
   async handleCommandReceived(
     context: TurnContext,

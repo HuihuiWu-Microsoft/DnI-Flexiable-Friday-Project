@@ -7,7 +7,8 @@ import {
 import { holidaysData } from "./cardData/holidayData";
 
 export class QueryHolidaysCommandHandler implements TeamsFxBotCommandHandler {
-  triggerPatterns: TriggerPatterns = /^Query holidays of (.*?)$/i;
+  public static regex = /^Query holidays of (.*?)$/i;
+  triggerPatterns: TriggerPatterns = QueryHolidaysCommandHandler.regex;
 
   async handleCommandReceived(
     context: TurnContext,
@@ -15,13 +16,14 @@ export class QueryHolidaysCommandHandler implements TeamsFxBotCommandHandler {
   ): Promise<string | Partial<Activity>> {
     // verify the command arguments which are received from the client if needed.
     console.log(`App received message: ${message.text}`);
-    const queryCountryString: string = message.matches[1];
+    let queryCountryString: string = message.matches[1];
     console.log(`query country: ${queryCountryString}`);
 
     let holidayList = [];
     for (const holiday of holidaysData) {
       if(holiday.holidayCountry.toLowerCase() === queryCountryString.toLowerCase()){
         holidayList.push(holiday.holidayName);
+        queryCountryString = holiday.holidayCountry;
       }
     }
 
