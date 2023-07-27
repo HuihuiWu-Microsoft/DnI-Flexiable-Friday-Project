@@ -46,6 +46,19 @@
                             "description": "A query command to check if this day is a holiday"
                         }
                     ]
+                },
+                {
+                    "scopes": [
+                        "personal",
+                        "team",
+                        "groupchat"
+                    ],
+                    "commands": [
+                        {
+                            "title": "Query holidays of COUNTRY",
+                            "description": "A query command to get all holidays of a certain country"
+                        }
+                    ]
                 }
               ]
         }

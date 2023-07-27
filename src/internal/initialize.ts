@@ -3,6 +3,7 @@ import ConversationBot = BotBuilderCloudAdapter.ConversationBot;
 import config from "./config";
 import { BlobsStorage } from "../storage/blobsStorage";
 import { QueryDateCommandHandler } from "../queryDateCommandHandler";
+import { QueryHolidaysCommandHandler } from "../queryHolidaysCommandHandler";
 
 const BlobStorageName = config.storageConnectionString;
 const BlobContainerName =
@@ -33,6 +34,7 @@ export const notificationApp = new ConversationBot({
     enabled: true,
     commands: [
       new QueryDateCommandHandler(),
+      new QueryHolidaysCommandHandler()
     ]
   }
 });
