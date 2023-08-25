@@ -25,6 +25,15 @@
     },
     "teamsAppId": {
       "value": "${{TEAMS_APP_ID}}"
+    },
+    "openAiKey": {
+      "value": "${{OPENAI_KEY}}"
+    },
+    "openAiEndpoint": {
+      "value": "${{OPENAI_ENDPOINT}}"
+    },
+    "openAiDeploymentName": {
+      "value": "${{OPENAI_DEPLOYMENT_NAME}}"
     }
   }
 }

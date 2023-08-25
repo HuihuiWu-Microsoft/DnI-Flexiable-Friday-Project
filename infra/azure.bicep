@@ -21,6 +21,14 @@ param envName string
 @description('TEAMS APP ID')
 param teamsAppId string
 
+
+@description('OpenAI service key')
+param openAiKey string
+@description('OpenAI service endpoint')
+param openAiEndpoint string
+@description('OpenAI service deployment model name')
+param openAiDeploymentName string
+
 param serverfarmsName string = resourceBaseName
 param functionAppName string = resourceBaseName
 param location string = resourceGroup().location
@@ -108,6 +116,18 @@ resource functionApp 'Microsoft.Web/sites@2021-02-01' = {
         {
           name: 'SCM_ZIPDEPLOY_DONOT_PRESERVE_FILETIME'
           value: '1' // Zipdeploy files will always be updated. Detail: https://aka.ms/teamsfx-zipdeploy-donot-preserve-filetime
+        }
+        {
+          name: 'OPENAI_KEY'
+          value: openAiKey
+        }
+        {
+          name: 'OPENAI_ENDPOINT'
+          value: openAiEndpoint
+        }
+        {
+          name: 'OPENAI_DEPLOYMENT_NAME'
+          value: openAiDeploymentName
         }
       ]
       ftpsState: 'FtpsOnly'
