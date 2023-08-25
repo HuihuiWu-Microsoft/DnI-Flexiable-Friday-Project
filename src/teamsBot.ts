@@ -14,19 +14,21 @@ export class TeamsBot extends TeamsActivityHandler {
 
     this.onMessage(async (context, next) => {
       let txt = context.activity.text;
-      if(QueryHolidaysCommandHandler.regex.exec(txt) == null && QueryDateCommandHandler.regex.exec(txt)  == null){
-      const removedMentionText = TurnContext.removeRecipientMention(context.activity);
-      if (removedMentionText) {
-        // Remove the line break
-        txt = removedMentionText.toLowerCase().replace(/\n|\r/g, "").trim();
-      }
+      if (QueryHolidaysCommandHandler.regex.exec(txt) == null && QueryDateCommandHandler.regex.exec(txt) == null) {
+        const removedMentionText = TurnContext.removeRecipientMention(context.activity);
+        if (removedMentionText) {
+          // Remove the line break
+          txt = removedMentionText.toLowerCase().replace(/\n|\r/g, "").trim();
+        }
 
-      const response = await client.getCompletions(config.openAiDeploymentName, [txt]);
-      for (const choice of response.choices) {
-          await context.sendActivity(choice.text);
+        const messages = [{ "role": "system", "content": "You are an AI assistant that helps people find information about diversity and inclusive." },
+                          { "role": "user", "content": txt }];
+        const response = await client.getChatCompletions(config.openAiDeploymentName, messages);
+        for (const choice of response.choices) {
+          await context.sendActivity(choice.message.content);
         }
       }
-      
+
       // By calling next() you ensure that the next BotHandler is run.
       await next();
     });
