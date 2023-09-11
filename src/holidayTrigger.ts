@@ -1,7 +1,7 @@
 import { AzureFunction, Context } from "@azure/functions";
 import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
 import { NotificationTargetType } from "@microsoft/teamsfx";
-import { holidaysData } from "./cardData/holidayData";
+import { holidaysData } from "./data/holidayData";
 import { HolidayCardData } from "./cardModels";
 import { notificationApp } from "./internal/initialize";
 import holidayTemplate from "./adaptiveCards/notification-holiday.json";

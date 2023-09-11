@@ -5,7 +5,7 @@ import {
   TriggerPatterns,
 } from "@microsoft/teamsfx";
 import { AdaptiveCards } from "@microsoft/adaptivecards-tools";
-import { holidaysData } from "./cardData/holidayData";
+import { holidaysData } from "./data/holidayData";
 import { HolidayCardData } from "./cardModels";
 import holidayTemplate from "./adaptiveCards/notification-holiday.json";
 

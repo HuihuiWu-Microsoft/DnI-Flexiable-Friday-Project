@@ -4,7 +4,7 @@ import {
   TeamsFxBotCommandHandler,
   TriggerPatterns,
 } from "@microsoft/teamsfx";
-import { holidaysData } from "./cardData/holidayData";
+import { holidaysData } from "./data/holidayData";
 
 export class QueryHolidaysCommandHandler implements TeamsFxBotCommandHandler {
   public static regex = /^Query holidays of (.*?)$/i;
