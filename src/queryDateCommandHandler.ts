@@ -29,7 +29,7 @@ export class QueryDateCommandHandler implements TeamsFxBotCommandHandler {
     
     for (const holiday of holidaysData) {
       const holidayDate = this._getDateFromHolidayData(holiday.holidayDate);
-      if (queryDate.getMonth() === holidayDate.month && queryDate.getDate() === holidayDate.day) {
+      if (queryDate.getMonth() + 1 === holidayDate.month && queryDate.getDate() === holidayDate.day) {
           const card = AdaptiveCards.declare<HolidayCardData>(holidayTemplate).render(holiday);
           return MessageFactory.attachment(CardFactory.adaptiveCard(card));
       }
@@ -45,8 +45,8 @@ export class QueryDateCommandHandler implements TeamsFxBotCommandHandler {
     const match = holidayDate.match(datePattern);
     if (match) {
       return {
-        month: parseInt(match[0]),
-        day: parseInt(match[1]),
+        month: parseInt(match[1]),
+        day: parseInt(match[2]),
       }
     }
 
