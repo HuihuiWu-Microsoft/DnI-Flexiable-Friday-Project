@@ -26,12 +26,12 @@ export class QueryDateCommandHandler implements TeamsFxBotCommandHandler {
     if (isNaN(queryDate.getTime())) {
       return MessageFactory.text("Invalid date format. Please enter date in the format of MM/DD, such as 01/01.");
     }
-    
+
     for (const holiday of holidaysData) {
-      const holidayDate = this._getDateFromHolidayData(holiday.holidayDate);
-      if (queryDate.getMonth() === holidayDate.month && queryDate.getDate() === holidayDate.day) {
-          const card = AdaptiveCards.declare<HolidayCardData>(holidayTemplate).render(holiday);
-          return MessageFactory.attachment(CardFactory.adaptiveCard(card));
+      const holidayDate = new Date(`${new Date().getFullYear()}-${holiday.holidayDate}`);
+      if (queryDate.getMonth() === holidayDate.getMonth() && queryDate.getDate() === holidayDate.getDate()) {
+        const card = AdaptiveCards.declare<HolidayCardData>(holidayTemplate).render(holiday);
+        return MessageFactory.attachment(CardFactory.adaptiveCard(card));
       }
     }
     return MessageFactory.text("No holiday on this date.");
@@ -45,9 +45,9 @@ export class QueryDateCommandHandler implements TeamsFxBotCommandHandler {
     const match = holidayDate.match(datePattern);
     if (match) {
       return {
-        month: parseInt(match[0]),
-        day: parseInt(match[1]),
-      }
+        month: parseInt(match[1]),
+        day: parseInt(match[2]),
+      };
     }
 
     const date = new Date(holidayDate);
